@@ -1,0 +1,354 @@
+
+/* Fichier : Project Root/CSS_Thame.css */
+
+/* ------------------------------------------- */
+/* 1. Réinitialisation et styles de base */
+/* ------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-main); 
+    background-color: var(--bg-page);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+a {
+    text-decoration: none; 
+    color: #007bff; 
+}
+
+ul {
+    list-style: none; 
+}
+/* Fichier : Project Root/CSS_Thame.css (RÉVISION FINALE DU HEADER) */
+
+/* ------------------------------------------- */
+/* 2. HEADER (En-tête) - Nouveau Layout */
+/* ------------------------------------------- */
+header {
+    background: var(--bg-header);
+    border-bottom: 2px solid var(--border-color);
+    padding: 5px 20px 5px 10px; /* Padding normal pour un header élégant */
+    display: flex;
+    align-items: center; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
+    /* Place Logo (gauche), Navigation (centre) et Sélecteur (droite) */
+    justify-content: space-between; 
+    
+    border-bottom: 2px solid #ddd;
+    min-height: 80px; /* Taille minimale suffisante pour le logo et les liens */
+}
+
+/* LOGO (Gauche) */
+header .logo a img {
+    /* NOUVELLE HAUTEUR PLUS GRANDE */
+    height: 90px; 
+    width: auto; 
+    max-width: 250px; /* Optionnel: Augmenter la largeur maximale si nécessaire */
+    display: block; 
+}
+
+.logo {
+    /* Taille du logo ajustée pour être petite et élégante dans le header */
+    flex-shrink: 0; /* Ne pas réduire la taille du logo */
+    margin-right: 0px;
+    padding: 0;
+
+}
+
+.logo a {
+    color: inherit; /* Le lien hérite de la couleur du parent */
+    text-decoration: none; /* S'assure qu'il n'y ait pas de soulignement bleu */
+    display: inline-block; /* Pour bien contenir l'image */
+}
+
+.logo img {
+    /* Nous allons le fixer à 40px de hauteur pour qu'il soit discret */
+    height: 40px; 
+    min-height: 40px; 
+    /* Retirez tout !important et style en ligne que vous auriez pu laisser */
+}
+
+/* NAVIGATION PRINCIPALE (Centre) */
+nav {
+    flex-grow: 1; 
+    /* Déplacer l'ensemble de la navigation vers la droite. 
+       Cela va donner plus d'espace au logo sur la gauche. */
+    justify-content: flex-end; /* ALIGNER À DROITE si vous voulez les liens à droite */
+    margin-left: 20px; /* AJOUTER MARGE À GAUCHE pour séparer le logo et la navigation */
+    text-align: left; /* Aligner les éléments de nav sur la gauche */
+}
+
+nav ul {
+    display: inline-flex; /* Permet aux liens de s'aligner horizontalement */
+    gap: 20px; /* Espace entre les liens */
+    margin: 0 auto; /* Tente un centrage plus strict si text-align ne suffit pas */
+}
+
+nav ul li a {
+    padding: 5px 0; /* Plus de padding horizontal large, l'espace est géré par le gap */
+    font-weight: bold;
+    color: var(--text-main);
+    white-space: nowrap; /* Empêche les noms de liens de se couper */
+    transition: color 0.3s;
+}
+
+/* SÉLECTEUR DE LANGUE (Droite) */
+.language-selector {
+    flex-shrink: 0; /* Ne pas le réduire */
+    margin-left: 20px;
+}
+
+/* 3. Navigation (Droite, Centrée) */
+nav {
+    flex-basis: 25%; /* Donne environ 25% de l'espace */
+    text-align: left; 
+    padding-right: 35px;
+}
+/* ... (Le reste des styles nav, lang-button, footer reste inchangé) ... */
+
+nav ul {
+    display: inline-flex;
+}
+
+/* Ancienne règle (padding: 0 15px;) */
+nav ul li a {
+    /* Réduire l'espacement horizontal pour que les liens soient plus proches */
+    padding: 0 10px; 
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007bff; /* Couleur au survol */
+}
+
+/* ------------------------------------------- */
+/* 3. Styles des Boutons de Langue */
+/* ------------------------------------------- */
+.lang-button {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.lang-button.active {
+    background-color: #007bff; /* Couleur principale active */
+    color: #fff;
+    border-color: #007bff;
+}
+
+.lang-button:not(.active):hover {
+    background-color: #eee;
+}
+
+/* ------------------------------------------- */
+/* 4. FOOTER (Pied de Page) */
+/* ------------------------------------------- */
+footer {
+    background: #333; /* Fond sombre */
+    color: #fff;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px; 
+}
+
+footer h4 {
+    margin-bottom: 5px;
+    color: #f0f0f0;
+}
+
+.copyright {
+    text-align: right;
+    font-size: 0.7em;
+}
+
+.slider-container {
+    /* NOUVELLE HAUTEUR BASÉE SUR VOS IMAGES */
+    height: 450px; /* Hauteur fixe pour correspondre à 450px */
+    
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 40px; 
+}
+
+.slider {
+    /* Le slider doit occuper 100% de la hauteur du conteneur */
+    height: 100%; 
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    /* Le .slide (maintenant <a>) doit aussi hériter de la hauteur */
+    height: 100%; 
+    min-width: 100%; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative; 
+    display: block; 
+    text-decoration: none;
+}
+
+/* --- Attribution des photos (Desktop par défaut) --- */
+.slide:nth-child(1) { 
+    background-image: url('../img/Diapo/main.png'); 
+}
+.slide:nth-child(2) { 
+    background-image: url('../img/Diapo/garden.png'); 
+}
+.slide:nth-child(3) { 
+    background-image: url('../img/Diapo/clean.png'); 
+}
+.slide:nth-child(4) { 
+   background-image: url('../img/Diapo/security.png'); 
+}
+.slide:nth-child(5) { 
+    background-image: url('../img/Diapo/water.png'); 
+}
+
+.slide-content {
+    /* CHANGEMENT CLÉ : Ancrer le contenu en BAS */
+    top: auto;        /* Annule toute instruction "top" antérieure */
+    bottom: 5%;       /* Positionne le contenu à 5% du bas de l'image (pour une marge) */
+    
+    left: 5%;         /* 5% de marge à gauche */
+    max-width: 50%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour la lisibilité */
+    color: white;
+    border-radius: 8px;
+    text-align: left;
+    
+    /* Assurez-vous que le positionnement absolu est bien présent */
+    position: absolute; 
+}
+
+.mobile-languages { display: none; } /* Caché sur PC */
+.mobile-menu-btn { display: none; }
+
+/* --- SUR MOBILE (max-width: 768px) --- */
+@media (max-width: 768px) {
+    header {
+        display: flex !important;
+        flex-direction: row !important; /* Force la ligne */
+        justify-content: space-between !important;
+        align-items: center;
+        padding: 10px 15px;
+    }
+
+    .desktop-only { display: none; } /* Cache le sélecteur de langue du header */
+
+    .mobile-menu-btn {
+        display: block !important;
+        order: 2; /* Force le bouton à droite */
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 1.5rem;
+    }
+
+    /* TIROIR DU MENU */
+    .nav-links {
+        display: none; /* CACHE LES RUBRIQUES PAR DÉFAUT */
+        flex-direction: column !important;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: white;
+        z-index: 2000;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        padding: 0;
+    }
+
+    .nav-links.active {
+        display: flex !important; /* Montre tout au clic */
+    }
+
+    .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+
+    .mobile-languages {
+        display: flex !important;
+        justify-content: center;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    /* 1. Ajuster la hauteur du conteneur pour le format vertical */
+    .slider-container {
+        height: 550px !important; 
+    }
+    
+/* Masquer la description dans le diaporama sur mobile */
+    .slide-content p {
+        display: none;
+    }
+
+    /* Optionnel : Ajuster la taille du titre pour qu'il soit bien lisible */
+    .slide-content h2 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    /* Optionnel : Réduire un peu le bloc noir transparent */
+    .slide-content {
+        padding: 15px;
+        max-width: 85%;
+    }
+
+    /* On force le changement d'image pour chaque slide sur mobile */
+    
+    /* Slide 1 - Accueil */
+    .slide:nth-child(1) { 
+        background-image: url('../img/Diapo/Main-mobile.png') !important; 
+    }
+
+    /* Slide 2 - Gardening */
+    .slide:nth-child(2) { 
+        background-image: url('../img/Diapo/Garden-mobile.png') !important; 
+    }
+
+    /* Slide 3 - Cleaning */
+    .slide:nth-child(3) { 
+        background-image: url('../img/Diapo/Clean-mobile.png') !important; 
+    }
+
+    /* Slide 4 - Security */
+    .slide:nth-child(4) { 
+        background-image: url('../img/Diapo/Security-mobile.png') !important; 
+    }
+
+    /* Slide 5 - Sewage-Treatment*/
+    .slide:nth-child(5) { 
+        background-image: url('../img/Diapo/Sewage-Treatment-mobile.png') !important; 
+    }
+    
+    /* Et ainsi de suite pour les autres slides... */
+
+    /* Ajustement de la hauteur du slider pour mobile si besoin */
+    .slider-container {
+        height: 500px; /* Vous pouvez agrandir la hauteur pour le mode portrait */
+    }
+}
+    

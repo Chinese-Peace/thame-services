@@ -1,0 +1,117 @@
+/* Fichier : Project Root/TMC/Cleaning.css */
+
+/* ------------------------------------------- */
+/* 1. VARIABLES DE COULEUR (Thème Nettoyage) */
+/* ------------------------------------------- */
+:root {
+    /* Bleu Marine / Confiance / Eau */
+    --primary-color: #1c4587; 
+    /* Gris très clair / Propreté */
+    --secondary-color: #f8f8ff; 
+    /* Bleu Cyan / Accentuation vive */
+    --accent-color: #00bcd4; 
+}
+
+
+/* ------------------------------------------- */
+/* 2. MISE EN PAGE GENERALE (COPIE DU MODÈLE) */
+/* ------------------------------------------- */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 40px 0;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+/* ------------------------------------------- */
+/* 3. SECTION HERO */
+/* ------------------------------------------- */
+.hero-cleaning { /* CLASSE MODIFIÉE */
+    background: var(--primary-color);
+    color: #fff;
+    padding: 60px 40px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-cleaning h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+
+/* ------------------------------------------- */
+/* 4. DETAILS DES SERVICES */
+/* ------------------------------------------- */
+.service-details {
+    background-color: var(--secondary-color);
+    padding: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.service-details h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.features-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
+}
+
+.feature-item {
+    background: #fff;
+    padding: 20px;
+    /* UTILISE LA COULEUR D'ACCENTUATION */
+    border-left: 5px solid var(--accent-color); 
+    flex-basis: calc(50% - 15px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.feature-item h3 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+/* ------------------------------------------- */
+/* 5. CALL TO ACTION (CTA) */
+/* ------------------------------------------- */
+.cta-cleaning { /* CLASSE MODIFIÉE */
+    background: var(--accent-color);
+    color: #fff;
+    text-align: center;
+    padding: 40px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.cta-cleaning h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.cta-cleaning a {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.cta-cleaning a:hover {
+    background-color: #0d285a; /* Bleu marine plus foncé au survol */
+}
