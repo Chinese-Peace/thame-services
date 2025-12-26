@@ -180,9 +180,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // À ajouter à la fin de votre bloc document.addEventListener('DOMContentLoaded', ... )
 document.addEventListener('DOMContentLoaded', () => {
+    const currentLang = localStorage.getItem('preferredLang') || 'en';
     const btn = document.getElementById('menu-toggle');
     const menu = document.querySelector('.nav-links');
 
+// On attend un tout petit peu que les traductions chargent
+    setTimeout(() => {
+        const btnToActivate = document.querySelector(`.lang-button[data-lang="${currentLang}"]`);
+        if (btnToActivate) {
+            btnToActivate.classList.add('active');
+            console.log("Bouton activé pour : " + currentLang);
+        }
+    }, 100);
+    
     if(btn && menu) {
         btn.addEventListener('click', (e) => {
             e.stopPropagation(); // Empêche des bugs de clic
@@ -190,4 +200,5 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.textContent = menu.classList.contains('active') ? '✕' : '☰';
         });
     }
+
 });
