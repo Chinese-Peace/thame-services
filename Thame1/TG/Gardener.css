@@ -1,0 +1,116 @@
+/* Fichier : Project Root/TG/Gardener.css */
+
+/* ------------------------------------------- */
+/* 1. VARIABLES DE COULEUR (Thème Jardinage) */
+/* ------------------------------------------- */
+:root {
+    /* Vert foncé / Nature */
+    --primary-color: #38761d; 
+    /* Vert plus clair pour les sections */
+    --secondary-color: #f0fff0; 
+    /* Vert pour les éléments importants */
+    --accent-color: #6aa84f; 
+}
+
+
+/* ------------------------------------------- */
+/* 2. MISE EN PAGE GENERALE */
+/* ------------------------------------------- */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 40px 0;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+/* ------------------------------------------- */
+/* 3. SECTION HERO (Bannière d'introduction) */
+/* ------------------------------------------- */
+.hero-gardener {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 60px 40px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-gardener h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+
+/* ------------------------------------------- */
+/* 4. DETAILS DES SERVICES (Corps de page) */
+/* ------------------------------------------- */
+.service-details {
+    background-color: var(--secondary-color);
+    padding: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.service-details h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.features-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
+}
+
+.feature-item {
+    background: #fff;
+    padding: 20px;
+    border-left: 5px solid var(--accent-color); /* Bande d'accentuation */
+    flex-basis: calc(50% - 15px); /* Deux colonnes */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.feature-item h3 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+/* ------------------------------------------- */
+/* 5. CALL TO ACTION (CTA) */
+/* ------------------------------------------- */
+.cta-gardener {
+    background: var(--accent-color);
+    color: #fff;
+    text-align: center;
+    padding: 40px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.cta-gardener h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.cta-gardener a {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.cta-gardener a:hover {
+    background-color: #274e13; /* Vert encore plus foncé au survol */
+}

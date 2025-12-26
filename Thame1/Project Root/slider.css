@@ -1,0 +1,96 @@
+/* Fichier : Project Root/slider.css */
+
+/* ------------------------------------------- */
+/* 1. Conteneur principal du Diaporama (Slider) */
+/* ------------------------------------------- */
+.slider-container {
+    position: relative;
+    width: 100%; /* Prend toute la largeur du 'main' (90% du viewport max 1200px) */
+    overflow: hidden; /* TRÈS IMPORTANT : cache les images non visibles */
+    margin: 20px 0;
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Ombre pour donner du relief */
+}
+
+/* ------------------------------------------- */
+/* 2. Bande des Diapositives */
+/* ------------------------------------------- */
+.slider {
+    display: flex; /* Aligne toutes les diapositives horizontalement */
+    transition: transform 0.5s ease-in-out; /* Ajoute une animation fluide lors du changement */
+}
+
+/* ------------------------------------------- */
+/* 3. Diapositive Individuelle */
+/* ------------------------------------------- */
+.slide {
+    min-width: 100%; /* Chaque diapositive prend exactement 100% de la largeur du conteneur visible */
+    flex-shrink: 0; /* Empêche les diapositives de rétrécir */
+}
+
+.slide img {
+    width: 100%;
+    /* Ajustez la hauteur. 'object-fit: cover' assure que l'image couvre le conteneur */
+    height: 450px; 
+    object-fit: cover; 
+    display: block;
+}
+
+
+/* ------------------------------------------- */
+/* 4. Boutons de Navigation (Flèches) */
+/* ------------------------------------------- */
+.prev-button, .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 10; /* Assure que les boutons sont au-dessus des images */
+    transition: background-color 0.3s;
+}
+
+.prev-button {
+    left: 10px;
+    border-radius: 0 5px 5px 0;
+}
+
+.next-button {
+    right: 10px;
+    border-radius: 5px 0 0 5px;
+}
+
+.prev-button:hover, .next-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* ------------------------------------------- */
+/* 5. Indicateurs de Navigation (Points/Dots) */
+/* ------------------------------------------- */
+.dots-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align: center;
+}
+
+.dot {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #007bff; /* La couleur de votre marque pour le point actif */
+}
